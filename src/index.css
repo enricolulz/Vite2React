@@ -1,0 +1,837 @@
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Germania+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #f6d3a5;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.background-top,
+.background-bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  background-color: #e8c598;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.background-top {
+  top: 0;
+  --mask: radial-gradient(
+        130px at 50% calc(100% - 180px),
+        #000 100%,
+        transparent 100%
+      )
+      calc(50% - 150px) 0/300px 100%,
+    radial-gradient(
+        130px at 50% calc(100% + 105px),
+        transparent 100%,
+        #000 100%
+      )
+      50% calc(100% - 75px) / 300px 100% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
+
+.background-bottom {
+  bottom: 0;
+  --mask: radial-gradient(130px at 50% 180px, #000 100%, transparent 100%)
+      calc(50% - 150px) 0/300px 100%,
+    radial-gradient(130px at 50% -105px, transparent 100%, #000 100%) 50% 75px/300px
+      100% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(6, calc((100% - 100px) / 5));
+  grid-template-rows: repeat(6, 1fr);
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+  padding: 5vh;
+  gap: 25px;
+}
+
+.div1 {
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 6;
+  position: relative;
+}
+
+.div2 {
+  grid-column: 4 / span 3;
+  grid-row: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2vh;
+  padding: 2vh;
+}
+
+.div3 {
+  grid-column: 4 / span 3;
+  grid-row: 5 / span 2;
+}
+
+.div4 {
+  grid-column: 4 / span 3;
+  grid-row: 3 / span 2;
+}
+
+.container-box {
+  position: relative;
+  background-color: #ba8768;
+  width: 100%;
+  height: 100%;
+  border-radius: 5vh;
+}
+
+.container-box-bottom {
+  background-color: #f3a265;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 75%;
+  --mask: radial-gradient(347.29px at 50% 477px, #000 100%, transparent 100%)
+      calc(50% - 360px) 0/720px 100%,
+    radial-gradient(347.29px at 50% -297px, transparent 100%, #000 100%) 50%
+      180px/720px 100% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  border-radius: 5vh;
+}
+
+.container-box,
+.container-box-bottom {
+  position: absolute;
+  z-index: 0;
+}
+
+.div1-content {
+  position: relative;
+  z-index: 1;
+}
+
+@font-face {
+  font-family: "AlegreyaExtraBold";
+  src: url("/Alegreya/Alegreya-ExtraBold.ttf") format("truetype");
+}
+
+.moon-title-container {
+  display: flex;
+  align-items: center;
+}
+
+.moon img {
+  width: 18vh;
+  height: 18vh;
+}
+
+.moon-title {
+  font-size: 8vh;
+  font-family: "AlegreyaExtraBold", sans-serif;
+  color: #b793ff;
+  margin-left: -10vh;
+  margin-top: -5vh;
+  z-index: 1;
+}
+
+.moon-description {
+  font-family: "Germania One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4vh;
+  color: #a8826e;
+  text-align: center;
+  margin-top: -7vh;
+  margin-left: 5vh;
+  width: 65%;
+}
+
+.moon-w-description {
+    color: white
+}
+
+.moon-line {
+  position: relative;
+  width: 55%;
+  border: 0.5vh solid #a8826e;
+  border-radius: 5px;
+  margin-left: 6vh;
+}
+
+.moon-line::before,
+.moon-line::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 2vh;
+  height: 2vh;
+  border: 0.8vh solid #a8826e; 
+  background-color: transparent;
+  border-radius: 2px;
+}
+
+.moon-line::before {
+  left: -3.5vh;
+}
+
+.moon-line::after {
+  right: -3.5vh;
+}
+
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2.5vh;
+    width: 65%;
+    height: 100%;
+}
+    
+.invite {
+    grid-column: span 3 / span 3;
+    background-color: #a6a6a6;
+    border-radius: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Fredoka", system-ui;
+    font-weight: bolder;
+    font-style: normal;
+    font-size: 4vh;
+    color: white;
+    text-decoration: none;
+    transition: border-radius 0.2s ease-in-out, font-size 0.1s ease-in-out;
+}
+
+.invite:hover {
+    border-radius: 1vh;
+    font-size: 5vh;
+}
+
+.discord {
+  grid-column: span 3 / span 3;
+  grid-row-start: 2;
+  background-color: #9299e1;
+  border-radius: 3vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: "Fredoka", system-ui;
+  font-weight: bolder;
+  font-style: normal;
+  font-size: 4vh;
+  color: white;
+  overflow: hidden;
+  text-decoration: none;
+  transition: border-radius 0.2s ease-in-out, font-size 0.1s ease-in-out;
+}
+
+.discord:hover {
+    border-radius: 1vh;
+    font-size: 5vh;
+}
+
+.discord-logo {
+  position: absolute;
+  left: 2.5vh;
+  width: 6vh;
+  height: 6vh;
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+}
+
+.discord:hover .discord-logo {
+  width: 7vh;
+  height: 7vh;
+}
+
+.button1 {
+    grid-row-start: 3;
+    background-color: #a7826d;
+    border-radius: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Germania One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3vh;
+    color: white;
+    text-decoration: none;
+   transition: border-radius 0.2s ease-in-out, font-size 0.1s ease-in-out;
+}
+
+.button1:hover {
+    border-radius: 1vh;
+    font-size: 4vh;
+}
+
+.button2 {
+    grid-row-start: 3;
+    background-color: #a7826d;
+    border-radius: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Germania One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3vh;
+    color: white;
+    text-decoration: none;
+   transition: border-radius 0.2s ease-in-out, font-size 0.1s ease-in-out;
+}
+
+.button2:hover {
+    border-radius: 1vh;
+    font-size: 4vh;
+}
+
+.button3 {
+    grid-row-start: 3;
+    background-color: #a7826d;
+    border-radius: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Germania One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3vh;
+    color: white;
+    text-decoration: none;
+    transition: border-radius 0.2s ease-in-out, font-size 0.1s ease-in-out;
+}
+
+.button3:hover {
+    border-radius: 1vh;
+    font-size: 4vh;
+}
+
+.login-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 8px;
+    height: 90vh;
+}
+
+.login-header {
+  grid-column: span 3 / span 3;
+  display: flex;
+  align-items: center;
+}
+
+.login-username {
+    grid-column: span 3 / span 3;
+    grid-row-start: 2;
+    padding: 2.5vh;
+}
+
+.login-password {
+    grid-column: span 3 / span 3;
+    grid-row-start: 3;
+    padding: 2.5vh;
+}
+
+.signup-email {
+    grid-column: span 3 / span 3;
+    grid-row-start: 3;
+    padding: 2.5vh;
+}
+
+.login-submit {
+    grid-column: span 3 / span 3;
+    grid-row-start: 4;
+    padding: 2.5vh;
+}
+
+.signup-password {
+    grid-column: span 3 / span 3;
+    grid-row-start: 4;
+    padding: 2.5vh;
+}
+
+.signup {
+    grid-column: span 3 / span 3;
+    grid-row-start: 5;
+  }
+  
+.signup-submit {
+    grid-column: span 3 / span 3;
+    grid-row-start: 5;
+}
+
+.div6 {
+    grid-column: span 3 / span 3;
+    grid-row-start: 6;
+  }
+  
+.login {
+    grid-column: span 3 / span 3;
+    grid-row-start: 6;
+}
+
+.header-title {
+  font-size: 5vh;
+  margin-left: 5vh;
+  font-family: "AlegreyaExtraBold", sans-serif;
+  color: #F3A265;
+}
+
+.header-line {
+  position: relative;
+  width: 55%;
+  border: 0.5vh solid #f3a265;
+  border-radius: 5px;
+  margin-left: 15vh;
+  height: 0;
+}
+
+.header-line::before,
+.header-line::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 2vh;
+  height: 2vh;
+  border: 0.8vh solid #f3a265; 
+  background-color: transparent;
+  border-radius: 2px;
+}
+
+.header-line::before {
+  left: -3.5vh;
+}
+
+.header-line::after {
+  right: -3.5vh;
+}
+
+.login-title {
+  font-size: 2.5vh;
+  font-family: "Germania One", system-ui;
+  color: white;
+  margin-left: 3.5vh;
+}
+
+.login-box {
+  background-color: white;
+  border: 1vh solid #eeae7e;
+  height: 10vh;
+  border-radius: 3vh;;
+  width: 85vh;
+  justify-self: center;
+}
+
+.login-box input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 3vh;
+  padding-left: 1vh;
+  color: #a8826e;
+  border-radius: 3vh;
+  font-family: "Germania One", system-ui;
+}
+
+.login-submit {
+  background-color: #00bf63;
+  width: 85vh;
+  justify-self: center;
+  height: 10vh;
+  border-radius: 3vh;;
+  border: none;
+  font-size: 6vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-family: "Germania One", system-ui;
+  color: white;
+  transition: border-radius 0.2s ease-in-out, font-size 0.1s ease-in-out;
+}
+
+.login-submit:hover {
+    border-radius: 1vh;
+    font-size: 7vh;
+}
+
+.signup-submit {
+  background-color: #00bf63;
+  width: 85vh;
+  justify-self: center;
+  height: 10vh;
+  border-radius: 3vh;;
+  font-size: 6vh;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  display: flex;
+  font-family: "Germania One", system-ui;
+  color: white;
+  transition: border-radius 0.2s ease-in-out, font-size 0.1s ease-in-out;
+}
+
+.signup-submit:hover {
+    border-radius: 1vh;
+    font-size: 7vh;
+}
+
+.signup {
+  background-color: #a6a6a6;
+  width: 85vh;
+  justify-self: center;
+  height: 5vh;
+  border-radius: 3vh;;
+  font-size: 2.5vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-family: "Germania One", system-ui;
+  color: white;
+  transition: border-radius 0.2s ease-in-out, font-size 0.1s ease-in-out;
+}
+
+.signup:hover {
+    border-radius: 1vh;
+    font-size: 3vh;
+}
+
+.login {
+  background-color: #a6a6a6;
+  width: 85vh;
+  justify-self: center;
+  height: 5vh;
+  border-radius: 3vh;;
+  font-size: 2.5vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-family: "Germania One", system-ui;
+  color: white;
+  transition: border-radius 0.2s ease-in-out, font-size 0.1s ease-in-out;
+}
+
+.login:hover {
+    border-radius: 1vh;
+    font-size: 3vh;
+}
+
+.error {
+  color: darkred;
+  justify-self: center;
+  margin-top: 2.5vh;
+}
+
+.success {
+  color: #00bf63;
+  justify-self: center;
+  margin-top: 2.5vh;
+}
+
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 8px;
+    height: 90vh;
+}
+
+.dashboard-grid1 {
+    grid-column: span 3 / span 3;
+    grid-row-start: 1;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-grid2x3 {
+    grid-column: span 3 / span 3;
+    grid-row: span 2 / span 2;
+    grid-row-start: 2;
+    padding: 2.5vh;
+}
+
+.grid2x3-box-title {
+  font-size: 3vh;
+  font-family: "Germania One", system-ui;
+  color: white;
+  margin-left: 5vh;
+  margin-bottom: 0.5vh;
+}
+
+.grid2x3-box {
+  height: 28vh;
+  width: 85vh;
+  justify-self: center;
+  background-color: white;
+  border-radius: 3vh;
+  border: #eeae7e 1vh solid;
+  color: #a6826d;
+  font-family: "Germania One", system-ui;
+  font-size: 3vh;
+  padding: 1.5vh;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.ve-t {
+  color: #8c52ff;
+}
+
+.grid2x3-button1 {
+ background-color: #00bf63;
+  width: 85vh;
+  justify-self: center;
+  height: 10vh;
+  border-radius: 3vh;;
+  border: none;
+  font-size: 6vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-family: "Germania One", system-ui;
+  color: white;
+  transition: border-radius 0.2s ease-in-out, font-size 0.1s ease-in-out;
+}
+
+.grind2x3-button1:hover {
+    border-radius: 1vh;
+    font-size: 7vh;
+}
+
+.grid2x3-button1 {
+  background-color: #00bf63;
+  width: 85vh;
+  justify-self: center;
+  height: 10vh;
+  border-radius: 3vh;;
+  border: none;
+  font-size: 6vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-family: "Germania One", system-ui;
+  color: white;
+  transition: border-radius 0.2s ease-in-out, font-size 0.1s ease-in-out;
+}
+
+
+.grid2x3-button1:hover {
+    border-radius: 1vh;
+    font-size: 7vh;
+}
+
+.grid2x3-button2 {
+  background-color: #a6a6a6;
+  width: 85vh;
+  justify-self: center;
+  height: 5vh;
+  border-radius: 3vh;;
+  font-size: 2.5vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-family: "Germania One", system-ui;
+  color: white;
+  margin-bottom: 2.5vh;
+  margin-top: 2.5vh;
+  transition: border-radius 0.2s ease-in-out, font-size 0.1s ease-in-out;
+}
+
+.grid2x3-button2:hover {
+    border-radius: 1vh;
+    font-size: 3vh;
+}
+
+.dashboard-grid4 {
+    grid-column: span 3 / span 3;
+    grid-row-start: 4;
+}
+  
+.dashboard-grid5 {
+    grid-column: span 3 / span 3;
+    grid-row-start: 5;
+    padding: 2.5vh;
+}
+
+.grid5-box-title {
+  font-size: 3vh;
+  font-family: "Germania One", system-ui;
+  color: white;
+  margin-bottom: -2.5vh;
+  margin-left: 5vh;
+}
+
+.grid5-box {
+  height: 15vh;
+  width: 85vh;
+  justify-self: center;
+  border-radius: 3vh;
+  border: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 8px;
+  padding: 2.5vh
+}
+
+.grid5-menu {
+  background-color: #bb8768;
+  border-radius: 3vh;
+  height: 5vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-family: "Germania One", system-ui;
+  color: white;
+  font-size: 2.5vh;
+  border: none;
+  transition: border-radius 0.2s ease-in-out, font-size 0.1s ease-in-out;
+}
+
+.grid5-menu:hover {
+    border-radius: 1vh;
+    font-size: 3vh;
+}
+
+.dashboard-grid6 {
+    grid-column: span 3 / span 3;
+    grid-row-start: 6;
+}
+
+
+.mainGrid4-box {
+  background-color: #ba8768;
+  height: 100%;
+  width: 65%;
+  border-radius: 5vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.mainGrid4x1 {
+  grid-row: span 2 / span 2;
+  height: 22.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25vh;
+}
+
+.mainGrid4x2 {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    width: 40vh;
+    padding: 1vh;
+}
+
+.mainGrid4x3 {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    width: 40vh;
+    padding: 1vh;
+}
+
+.mainGrid4x4 {
+    grid-column: span 2 / span 2;
+    grid-column-start: 1;
+    grid-row-start: 3;
+    height: 5vh;
+    width: 25%;
+    margin-top: -3.5vh;
+    margin-left: 5vh;
+    border-radius: 3vh;
+    background-color: #a6a6a6;
+    font-size: 3vh;
+    font-family: "Germania One", system-ui;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    transition: border-radius 0.2s ease-in-out, font-size 0.1s ease-in-out;
+}
+
+.mainGrid4x4:hover {
+    border-radius: 1vh;
+    font-size: 3.5vh;
+}
+
+.mainGrid4x1 img {
+  height: 20vh;
+  position: absolute;
+  width: 20vh;
+  border-radius: 50%;
+  border: 1vh solid #f3a166;
+}
+
+.mainGrid4x1-status.active {
+  background-color: #00bf63;
+  height: 5vh;
+  width: 5vh;
+  border-radius: 50%;
+  z-index: 1;
+  margin-bottom: -15vh;
+  margin-right: -15vh;
+}
+
+.mainGrid4x1-status.inactive {
+  background-color: #737373;
+  height: 5vh;
+  width: 5vh;
+  border-radius: 50%;
+  z-index: 1;
+  margin-bottom: -15vh;
+  margin-right: -15vh;
+}
+
+.mainGrid-title {
+  font-size: 2.5vh;
+  font-family: "Germania One", system-ui;
+  color: white;
+}
+
+.mainGrid-box {
+  background-color: white;
+  height: 75%;
+  border-radius: 2vh;
+  border: 0.75vh solid #f3a265;
+  align-items: center;
+  display: flex;
+  padding: 1vh;
+  color: #a7826d;
+  font-family: "Germania One", system-ui;
+  font-size: 3vh;
+}
